@@ -1,0 +1,9 @@
+../Core/Src/app.c:77:13:appTimerCallback	2
+../Core/Src/app.c:103:13:gyroInput	3
+../Core/Src/app.c:151:13:buttonInput	3
+../Core/Src/app.c:205:13:ledOutput	2
+../Core/Src/app.c:247:6:appInit	9
+../Core/Src/app.c:320:6:sampleUserButton	1
+../Core/Src/app.c:331:25:getGyroRateOfRotation	5
+../Core/Src/app.c:376:6:driveLEDs	5
+../Core/Src/app.c:411:6:EXTI0_IRQHandler	1

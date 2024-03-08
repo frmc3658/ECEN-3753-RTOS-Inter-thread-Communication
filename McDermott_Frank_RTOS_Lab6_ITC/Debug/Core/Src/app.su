@@ -1,0 +1,9 @@
+../Core/Src/app.c:77:13:appTimerCallback	24	static
+../Core/Src/app.c:103:13:gyroInput	24	static
+../Core/Src/app.c:151:13:buttonInput	24	static
+../Core/Src/app.c:205:13:ledOutput	24	static
+../Core/Src/app.c:247:6:appInit	8	static
+../Core/Src/app.c:320:6:sampleUserButton	8	static
+../Core/Src/app.c:331:25:getGyroRateOfRotation	16	static
+../Core/Src/app.c:376:6:driveLEDs	16	static
+../Core/Src/app.c:411:6:EXTI0_IRQHandler	8	static

@@ -1,0 +1,10 @@
+../Core/Src/Gyro_Driver.c:21:6:Gyro_Init	1
+../Core/Src/Gyro_Driver.c:34:6:Gyro_Power_On	4
+../Core/Src/Gyro_Driver.c:71:6:Gyro_Reboot	3
+../Core/Src/Gyro_Driver.c:102:9:Gyro_Get_Velocity	2
+../Core/Src/Gyro_Driver.c:127:6:Gyro_Config_Regs	5
+../Core/Src/Gyro_Driver.c:183:6:Gyro_HAL_Check	2
+../Core/Src/Gyro_Driver.c:196:6:Gyro_Slave_Enable	1
+../Core/Src/Gyro_Driver.c:206:6:Gyro_Slave_Disable	1
+../Core/Src/Gyro_Driver.c:217:6:Gyro_Receive_Data	1
+../Core/Src/Gyro_Driver.c:228:6:Gyro_Transmit_Data	1
