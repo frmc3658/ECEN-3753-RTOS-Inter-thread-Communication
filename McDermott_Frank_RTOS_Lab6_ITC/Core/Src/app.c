@@ -11,7 +11,6 @@
 /************************************
  * 			Static Variables		*
  ************************************/
-
 static struct Message_t
 {
 	GPIO_PinState 		buttonState;
@@ -19,13 +18,9 @@ static struct Message_t
 }appMessage;
 
 
-/* Static Variables */
-volatile static uint8_t ledInfoEventFlagGroup;
-
 /* Static Timer */
 static osTimerId_t appTimerID;
 static const osTimerAttr_t appTimerAttr = { .name = "appTimer"};
-volatile static osStatus_t appTimerStatus;
 
 /* Static Semaphore */
 static osSemaphoreId_t gyroInputSemaphorID;
@@ -39,15 +34,16 @@ static const osEventFlagsAttr_t buttonEventFlagAttr = { .name = "buttonEventFlag
 static osMessageQueueId_t ledInfoMsgQueueID;
 static const osMessageQueueAttr_t ledInfoMsgQueueAttr = { .name = "ledInfoMsgQueue" };
 
-/* Static Tasks */
+/* Static Task: Gyro */
 static osThreadId_t gyroInputTask;
 static const osThreadAttr_t gyroInputTaskAttr = { .name = "gyroInputTask" };
-
+/* Static Task: Button */
 static osThreadId_t buttonInputTask;
 static const osThreadAttr_t buttonInputTaskAttr = { .name = "buttonInputTask" };
-
+/* Static Task: LED output */
 static osThreadId_t ledOutputTask;
 static const osThreadAttr_t ledOutputTaskAttr = { .name = "ledOutputTask" };
+
 
 /************************************
  * 	Static Function Prototypes		*
@@ -155,7 +151,6 @@ static void buttonInput(void* arg)
 
 	osStatus_t buttonMessagePutStatus;
 
-
 	while(1)
 	{
 		// Wait for the button event flag to be set
@@ -211,8 +206,6 @@ static void ledOutput(void* arg)
 	struct Message_t ledOutputMessage;
 	osStatus_t messageStatus;
 
-	//
-
 	while(1)
 	{
 		// Get the next message from the message queue
@@ -257,7 +250,7 @@ void appInit(void)
 	}
 
 	// Start the OS Timer
-	appTimerStatus = osTimerStart(appTimerID, APP_TIMER_TICKS_100MS);
+	osStatus_t appTimerStatus = osTimerStart(appTimerID, APP_TIMER_TICKS_100MS);
 
 	if(appTimerStatus != osOK)
 	{
