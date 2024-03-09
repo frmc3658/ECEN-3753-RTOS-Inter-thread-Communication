@@ -1,0 +1,10 @@
+# Ignore the following files and directories
+.settings
+Debug
+.cproject
+.mxproject
+.project
+McDermott_Frank_RTOS_Lab6_ITC Debug.launch
+McDermott_Frank_RTOS_Lab6_ITC.ioc
+STM32F429ZITX_FLASH.ld
+STM32F429ZITX_RAM.ld
